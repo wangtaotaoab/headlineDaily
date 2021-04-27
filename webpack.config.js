@@ -1,5 +1,5 @@
 const { resolve } = require('path') //把路径改为绝对路径
-const { autoprefixer } = require('autoprefixer') // 兼容性前缀
+const autoprefixer  = require('autoprefixer') // 兼容性前缀
 const  HtmlWebpackPlugin  = require('html-webpack-plugin')  
 
 /* 
@@ -47,15 +47,15 @@ module.exports = {
         loader:'ejs-loader',
       },
       {
-        test:/\.css$/, //放多个loader
-        use:[
+        test: /\.css$/,
+        use: [
           'style-loader',
           'css-loader',
           {
-            loader:'postcss-loader',
-            options:{
-              plugins:function(){
-                return [autoprefixer('last 5 version')]
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [autoprefixer('last 5 versions')];
               }
             }
           }
